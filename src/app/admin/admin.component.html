@@ -1,0 +1,61 @@
+<div class="add-team-form card">
+  <div>
+    <h4>Add A New Team</h4>
+      <div>
+        <label>Team Name:</label>
+        <br>
+        <input type="text" #newName>
+      </div>
+
+      <div>
+        <label>About:</label>
+        <br>
+        <input type="text" #newAbout>
+      </div>
+
+      <button (click)="submitTeamForm(newName.value, newAbout.value); newName.value=''; newAbout.value=''">Add</button>
+    </div>
+</div>
+
+<div class="add-member-form card">
+  <div>
+    <h4>Add A New Player To A Team</h4>
+      <div>
+        <label>Player Name:</label>
+        <br>
+        <input #newName>
+      </div>
+
+      <div>
+        <label>Age:</label>
+        <br>
+        <input #newAge>
+      </div>
+
+      <div>
+        <label>Skill Level:</label>
+        <br>
+        <input #newSkill>
+      </div>
+
+      <div>
+        <label>About:</label>
+        <br>
+        <input #newAbout>
+      </div>
+
+      <div>
+        <label>Select Team:</label>
+        <br>
+        <input #newTeamId>
+      </div>
+
+      <button (click)="submitMemberForm(newName.value, newAge.value, newSkill.value, newAbout.value, newTeamId.value); newName.value=''; newAbout.value=''; newAge.value=''; newSkill.value; newTeamId.value">Add</button>
+    </div>
+</div>
+
+<div class="edit-teams" *ngIf="editTeams">
+  <div *ngFor="let team of teams">
+
+  </div>
+</div>

@@ -51,4 +51,12 @@ export class TeamMemberDetailsComponent implements OnInit {
     this.editable = false;
   }
 
+  deleteMember(selectedMember) {
+    let memberTeam = selectedMember.teamId;
+    if (confirm("Are you sure you want to remove this member?")) {
+      this.memberService.deleteMember(selectedMember);
+    }
+    this.router.navigate(['team', memberTeam]);
+  }
+
 }

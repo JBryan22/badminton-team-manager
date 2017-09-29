@@ -5,6 +5,7 @@ import { TeamMemberDetailsComponent } from './team-member-details/team-member-de
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { AddTeamComponent } from './add-team/add-team.component';
 import { AddTeamMemberComponent } from './add-team-member/add-team-member.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const appRoutes: Routes = [
@@ -27,6 +28,10 @@ const appRoutes: Routes = [
   {
     path: 'add-team-member',
     component: AddTeamMemberComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   }
 ];
 

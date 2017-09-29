@@ -5,7 +5,7 @@
   <p>{{selectedMember.about}}</p>
   <p>{{selectedMember.teamId}}</p>
   <button (click)="editMember()">Edit</button>
-  <button (click)="deleteMember()">Delete</button>
+  <button (click)="deleteMember(selectedMember)">Delete</button>
 </div>
 
 <div *ngIf="selectedMember && editable" class="card">
