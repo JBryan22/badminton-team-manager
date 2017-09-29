@@ -1,3 +1,19 @@
-<p>
-  team-member-details works!
-</p>
+<div *ngIf="selectedMember && !editable" class="card">
+  <h3>{{selectedMember.name}}</h3>
+  <p>{{selectedMember.age}}</p>
+  <p>{{selectedMember.skillLevel}}</p>
+  <p>{{selectedMember.about}}</p>
+  <p>{{selectedMember.teamId}}</p>
+  <button (click)="editMember()">Edit</button>
+  <button (click)="deleteMember()">Delete</button>
+</div>
+
+<div *ngIf="selectedMember && editable" class="card">
+  <input type="text" [(ngModel)]="selectedMember.name">
+  <input type="text" [(ngModel)]="selectedMember.age">
+  <input type="text" [(ngModel)]="selectedMember.skillLevel">
+  <input type="text" [(ngModel)]="selectedMember.about">
+  <input type="text" [(ngModel)]="selectedMember.teamId">
+  <button (click)="finishEdit(selectedMember)">Update</button>
+  <button (click)="cancelEdit()">Cancel</button>
+</div>

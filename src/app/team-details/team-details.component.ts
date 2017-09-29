@@ -18,7 +18,6 @@ export class TeamDetailsComponent implements OnInit {
   selectedTeamId: string;
   selectedTeam: Team;
 
-
   constructor(
     private route:ActivatedRoute,
     private location: Location,
@@ -29,7 +28,6 @@ export class TeamDetailsComponent implements OnInit {
 
   ngOnInit() {
     //get Team ID
-        console.log("got here");
     this.route.params.forEach((urlParameters) => {
       this.selectedTeamId = urlParameters['id'];
     });
@@ -40,17 +38,25 @@ export class TeamDetailsComponent implements OnInit {
     });
     //get Team Members
     this.memberService.getMembers().subscribe(dataLastEmittedFromObserver => {
-      for(let i = 0; i < dataLastEmittedFromObserver.length; i++) {
-        this.members.push(new Member(
-          dataLastEmittedFromObserver[i].name,
-          dataLastEmittedFromObserver[i].age,
-          dataLastEmittedFromObserver[i].skillLevel,
-          dataLastEmittedFromObserver[i].about,
-          dataLastEmittedFromObserver[i].teamId
-        ));
-      }
+      this.members = dataLastEmittedFromObserver;
     });
-    console.log(this.members);
+
+
+    // this.memberService.getMembers().subscribe(dataLastEmittedFromObserver => {
+    //   for(let i = 0; i < dataLastEmittedFromObserver.length; i++) {
+    //     this.members.push(new Member(
+    //       dataLastEmittedFromObserver[i].name,
+    //       dataLastEmittedFromObserver[i].age,
+    //       dataLastEmittedFromObserver[i].skillLevel,
+    //       dataLastEmittedFromObserver[i].about,
+    //       dataLastEmittedFromObserver[i].teamId
+    //     ));
+    //   }
+    // });
+  }
+
+  goToMemberDetails(member){
+    this.router.navigate(['team-member', member.$key])
   }
 
 }

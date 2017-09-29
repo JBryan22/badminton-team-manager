@@ -4,7 +4,7 @@
 </div>
 
 <div class="member-list" *ngFor="let member of members | teamAssociation:selectedTeamId">
-  <div class="card">
+  <div class="card" (click)="goToMemberDetails(member)">
     <p>{{member.name}}</p>
     <p>{{member.about}}</p>
     <p>{{member.teamId}}</p>

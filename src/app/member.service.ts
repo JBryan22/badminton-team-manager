@@ -22,7 +22,7 @@ export class MemberService {
     this.members.push(newMember);
   }
 
-  updateMembers(localUpdatedMember) {
+  updateMember(localUpdatedMember) {
     let memberEntryInFirebase = this.getMemberById(localUpdatedMember.$key);
     memberEntryInFirebase.update({name: localUpdatedMember.name,
                                   age: localUpdatedMember.age,
