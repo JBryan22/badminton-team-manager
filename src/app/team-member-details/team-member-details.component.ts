@@ -17,6 +17,7 @@ export class TeamMemberDetailsComponent implements OnInit {
   selectedMember: FirebaseObjectObservable<any>;
   selectedMemberId: string;
   editable: boolean = false;
+  admin: boolean = false;
 
   constructor(private route: ActivatedRoute, private memberService: MemberService, private router: Router) { }
 
@@ -57,6 +58,10 @@ export class TeamMemberDetailsComponent implements OnInit {
       this.memberService.deleteMember(selectedMember);
     }
     this.router.navigate(['team', memberTeam]);
+  }
+
+  adminLogin() {
+    this.admin = true;
   }
 
 }

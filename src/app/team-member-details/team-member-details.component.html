@@ -1,11 +1,15 @@
+<button (click)="adminLogin()">Login As Admin</button>
+
 <div *ngIf="selectedMember && !editable" class="card">
   <h3>{{selectedMember.name}}</h3>
   <p>{{selectedMember.age}}</p>
   <p>{{selectedMember.skillLevel}}</p>
   <p>{{selectedMember.about}}</p>
   <p>{{selectedMember.teamId}}</p>
-  <button (click)="editMember()">Edit</button>
-  <button (click)="deleteMember(selectedMember)">Delete</button>
+  <div class="admin-member-detail" *ngIf="admin">
+    <button (click)="editMember()">Edit</button>
+    <button (click)="deleteMember(selectedMember)">Delete</button>
+  </div>
 </div>
 
 <div *ngIf="selectedMember && editable" class="card">

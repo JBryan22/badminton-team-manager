@@ -11,11 +11,14 @@ import { TeamService } from '../team.service';
   providers: [MemberService, TeamService]
 })
 export class AdminComponent implements OnInit {
+  teams;
 
   constructor(private memberService: MemberService, private teamService: TeamService) { }
 
   ngOnInit() {
-
+    this.teamService.getTeams().subscribe(dataLastEmittedFromObserver => {
+      this.teams = dataLastEmittedFromObserver;
+    })
   }
 
   submitMemberForm(name: string, age: number, skillLevel: string, about: string, teamId:string) {
@@ -24,10 +27,18 @@ export class AdminComponent implements OnInit {
   }
 
   submitTeamForm(name: string, about: string) {
-    console.log(name);
-    console.log(about);
     let newTeam: Team = new Team(name, about);
     this.teamService.addTeam(newTeam);
+  }
+
+  updateTeam(team) {
+    this.teamService.updateTeam(team);
+  }
+
+  deleteTeam(selectedTeam) {
+    if (confirm("Are you sure you want to remove this team? This will delete all players on this team.")) {
+      this.teamService.deleteTeam(selectedTeam);
+    }
   }
 
 }

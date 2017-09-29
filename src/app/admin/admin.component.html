@@ -4,16 +4,16 @@
       <div>
         <label>Team Name:</label>
         <br>
-        <input type="text" #newName>
+        <input #newName>
       </div>
 
       <div>
         <label>About:</label>
         <br>
-        <input type="text" #newAbout>
+        <textarea #newAbout></textarea>
       </div>
 
-      <button (click)="submitTeamForm(newName.value, newAbout.value); newName.value=''; newAbout.value=''">Add</button>
+      <button (click)="submitTeamForm(newName.value, newAbout.value)">Add</button>
     </div>
 </div>
 
@@ -23,39 +23,43 @@
       <div>
         <label>Player Name:</label>
         <br>
-        <input #newName>
+        <input #newMemberName>
       </div>
 
       <div>
         <label>Age:</label>
         <br>
-        <input #newAge>
+        <input #newMemberAge>
       </div>
 
       <div>
         <label>Skill Level:</label>
         <br>
-        <input #newSkill>
+        <input #newMemberSkill>
       </div>
 
       <div>
         <label>About:</label>
         <br>
-        <input #newAbout>
+        <input #newMemberAbout>
       </div>
 
       <div>
         <label>Select Team:</label>
         <br>
-        <input #newTeamId>
+        <input #newMemberTeamId>
       </div>
 
-      <button (click)="submitMemberForm(newName.value, newAge.value, newSkill.value, newAbout.value, newTeamId.value); newName.value=''; newAbout.value=''; newAge.value=''; newSkill.value; newTeamId.value">Add</button>
+      <button (click)="submitMemberForm(newMemberName.value, newMemberAge.value, newMemberSkill.value, newMemberAbout.value, newMemberTeamId.value); newMemberName.value=''; newMemberAbout.value=''; newMemberAge.value=''; newMemberSkill.value; newMemberTeamId.value">Add</button>
     </div>
 </div>
 
-<div class="edit-teams" *ngIf="editTeams">
+<div class="edit-teams">
   <div *ngFor="let team of teams">
-
+    <input type="text" [(ngModel)]="team.name"><br>
+    <textarea [(ngModel)]="team.about"></textarea><br>
+    <button (click)="updateTeam(team)">Update</button>
+    <button (click)="deleteTeam(team)">Delete</button>
+    <hr>
   </div>
 </div>
