@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { TeamListComponent } from './team-list/team-list.component';
@@ -10,6 +11,18 @@ import { TeamMemberDetailsComponent } from './team-member-details/team-member-de
 import { AddTeamComponent } from './add-team/add-team.component';
 import { AddTeamMemberComponent } from './add-team-member/add-team-member.component';
 
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { TeamAssociationPipe } from './teamassociation.pipe';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +30,16 @@ import { AddTeamMemberComponent } from './add-team-member/add-team-member.compon
     TeamDetailsComponent,
     TeamMemberDetailsComponent,
     AddTeamComponent,
-    AddTeamMemberComponent
+    AddTeamMemberComponent,
+    TeamAssociationPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

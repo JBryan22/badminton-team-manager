@@ -17,7 +17,16 @@ const appRoutes: Routes = [
     component: TeamDetailsComponent
   },
   {
-    path: ''
+    path: 'team-member/:id',
+    component: TeamMemberDetailsComponent
+  },
+  {
+    path: 'add-team',
+    component: AddTeamComponent
+  },
+  {
+    path: 'add-team-member',
+    component: AddTeamMemberComponent
   }
 ];
 

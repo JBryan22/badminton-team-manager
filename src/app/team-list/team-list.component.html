@@ -1,3 +1,5 @@
-<p>
-  team-list works!
-</p>
+<div class="team-list" *ngFor="let team of teams | async">
+  <div class="card">
+    <h3 (click)="goToTeamDetails(team)">{{team.name}}</h3>
+  </div>
+</div>

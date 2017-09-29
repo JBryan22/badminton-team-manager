@@ -1,0 +1,37 @@
+{
+  "data":{
+    "teams": [{
+      "name": "Super Cool",
+      "about": "We are a diverse group of badminton lovers. We come from many different countries and a range of ages. Anyone that loves badminton is welcome to join this team! We host have a competitive division and an intermediate division.",
+      "playerCount": 0
+      }, {
+      "name": "Pandemonium",
+      "about": "We are badass badminton players. We are a group of friends that wants to kick some butt on the badminton court! ",
+      "playerCount": 0
+        }, {
+      "name": "BBC Junior",
+      "about": "We are the juniors that have trained at Bellevue Badminton Club. We may be young, but we are well trained and will kick your butt!",
+      "playerCount": 0
+  }],
+
+    "members": [{
+      "name": "Jesse Bryan",
+      "age": 28,
+      "skillLevel": "Advanced",
+      "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ",
+      "teamId": 0
+      }, {
+      "name": "Damien Blond",
+      "age": 38,
+      "skillLevel": "Advanced",
+      "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ",
+      "teamId": 0
+      }, {
+      "name": "Alex Hart",
+      "age": 47,
+      "skillLevel": "intermediate",
+      "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i",
+      "teamId": 1
+    }]
+  }
+}

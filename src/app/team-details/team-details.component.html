@@ -1,3 +1,12 @@
-<p>
-  team-details works!
-</p>
+<div *ngIf="selectedTeam" class="team-details">
+  <h3>{{selectedTeam.name}}</h3>
+  <p>{{selectedTeam.about}}</p>
+</div>
+
+<div class="member-list" *ngFor="let member of members | teamAssociation:selectedTeamId">
+  <div class="card">
+    <p>{{member.name}}</p>
+    <p>{{member.about}}</p>
+    <p>{{member.teamId}}</p>
+  </div>
+</div>
