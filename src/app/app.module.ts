@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { TeamListComponent } from './team-list/team-list.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { TeamMemberDetailsComponent } from './team-member-details/team-member-details.component';
-import { AddTeamComponent } from './add-team/add-team.component';
-import { AddTeamMemberComponent } from './add-team-member/add-team-member.component';
 
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
@@ -17,6 +15,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { TeamAssociationPipe } from './teamassociation.pipe';
 import { AdminComponent } from './admin/admin.component';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,11 +30,10 @@ export const firebaseConfig = {
     TeamListComponent,
     TeamDetailsComponent,
     TeamMemberDetailsComponent,
-    AddTeamComponent,
-    AddTeamMemberComponent,
     TeamAssociationPipe,
     AdminComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -11,3 +11,12 @@
 body {
   padding-bottom: 50px;
 }
+
+.card {
+  margin: 15px;
+  padding: 25px;
+}
+
+h1 {
+  text-align: center;
+}

@@ -3,10 +3,9 @@
   <p>{{selectedTeam.about}}</p>
 </div>
 
-<div class="member-list" *ngFor="let member of members | teamAssociation:selectedTeamId">
-  <div class="card" (click)="goToMemberDetails(member)">
+<div class="member-list" *ngFor="let member of members | teamAssociation:selectedTeamId" (click)="goToMemberDetails(member)">
+  <div class="card" >
     <p>{{member.name}}</p>
     <p>{{member.about}}</p>
-    <p>{{member.teamId}}</p>
   </div>
 </div>

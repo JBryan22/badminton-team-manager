@@ -2,10 +2,9 @@
 
 <div *ngIf="selectedMember && !editable" class="card">
   <h3>{{selectedMember.name}}</h3>
-  <p>{{selectedMember.age}}</p>
-  <p>{{selectedMember.skillLevel}}</p>
+  <p>Age: {{selectedMember.age}}</p>
+  <p>Skill Level: {{selectedMember.skillLevel}}</p>
   <p>{{selectedMember.about}}</p>
-  <p>{{selectedMember.teamId}}</p>
   <div class="admin-member-detail" *ngIf="admin">
     <button (click)="editMember()">Edit</button>
     <button (click)="deleteMember(selectedMember)">Delete</button>
