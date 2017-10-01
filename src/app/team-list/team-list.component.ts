@@ -10,7 +10,7 @@ import * as firebase from 'firebase/app';
   selector: 'app-team-list',
   templateUrl: './team-list.component.html',
   styleUrls: ['./team-list.component.css'],
-  providers: [TeamService]
+  providers: [TeamService, AngularFireAuth]
 })
 export class TeamListComponent implements OnInit {
   teams: FirebaseListObservable<any[]>;
