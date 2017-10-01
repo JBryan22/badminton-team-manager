@@ -16,6 +16,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { TeamAssociationPipe } from './teamassociation.pipe';
 import { AdminComponent } from './admin/admin.component';
+import { AboutComponent } from './about/about.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -33,7 +34,8 @@ export const firebaseConfig = {
     AddTeamComponent,
     AddTeamMemberComponent,
     TeamAssociationPipe,
-    AdminComponent
+    AdminComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
