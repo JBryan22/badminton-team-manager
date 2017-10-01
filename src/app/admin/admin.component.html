@@ -45,9 +45,10 @@
       </div>
 
       <div>
-        <label>Select Team:</label>
+        <select #newMemberTeamId>Select Team:
         <br>
-        <input #newMemberTeamId>
+        <option *ngFor="let team of teams" value={{team.$key}}>{{team.name}}</option>
+        </select>
       </div>
 
       <button (click)="submitMemberForm(newMemberName.value, newMemberAge.value, newMemberSkill.value, newMemberAbout.value, newMemberTeamId.value); newMemberName.value=''; newMemberAbout.value=''; newMemberAge.value=''; newMemberSkill.value; newMemberTeamId.value">Add</button>
