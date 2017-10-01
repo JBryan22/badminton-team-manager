@@ -1,4 +1,7 @@
 <div class="form-group">
+  <div *ngIf="errorMessage" class="error-output">
+    <p>{{errorMessage}}</p>
+  </div>
   <form (submit)="login($event)">
     <label>Email:</label>
     <input class="form-control" type="email" required>

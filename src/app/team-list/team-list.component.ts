@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../team.service';
 import { Router } from '@angular/router';
-import { FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-team-list',
@@ -11,8 +14,11 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class TeamListComponent implements OnInit {
   teams: FirebaseListObservable<any[]>;
+  user: Observable<firebase.User>;
 
-  constructor(private router: Router, private teamService: TeamService) { }
+  constructor(private afAuth: AngularFireAuth, private router: Router, private teamService: TeamService) {
+    this.user = this.afAuth.authState;
+  }
 
   ngOnInit() {
     this.teams = this.teamService.getTeams();

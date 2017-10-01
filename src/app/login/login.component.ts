@@ -8,7 +8,8 @@ import * as firebase from 'firebase/app';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [AngularFireAuth]
 })
 export class LoginComponent implements OnInit {
   errorMessage: string;
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private afAuth: AngularFireAuth, private af: AngularFireDatabase) { }
 
   ngOnInit() {
+    this.errorMessage = '';
   }
 
   login(event) {
